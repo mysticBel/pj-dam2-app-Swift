@@ -20,14 +20,16 @@ class DetalleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cargamos los datos
-        lblNumero1.text = "Numero 1: " + String(num1)
-        lblNumero2.text = "Numero 2: " + String(num2)
-        lblResultado.text = "Resultado: " + String(resul)
+        //cargamos los datos a pantalla2
+        lblNumero1.text = "Numero 1 :  " + String(num1)
+        lblNumero2.text = "Numero 2 :  " + String(num2)
+        lblResultado.text = "Resultado :  " + String(resul)
     }
 
     
     @IBAction func btnVolver(_ sender: UIButton) {
+        dismiss(animated: true)
+        
     }
     
 }
