@@ -35,5 +35,20 @@ class ViewController: UIViewController {
         resu = n1 + n2
         lblResultado.text = " Resultado : "+String(resu)
     }
+    
+    @IBAction func btnResumen(_ sender: UIButton) {
+        
+        // 1. Creamos objeto de tipo UIStoryBoard , que obtiene
+        // todas las pantallas del Main Storyboard
+        let data = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 2. Acceder al identificado "resumen" (pantalla2) y luego castearlo a tipo
+        // DetalleViewController con el as!
+        let pantalla2 = data.instantiateViewController(identifier: "resumen") as! DetalleViewController
+        
+        // 3. Direccionar con present - animated es una animacion
+        present(pantalla2, animated: true)
+        
+    }
 }
 
