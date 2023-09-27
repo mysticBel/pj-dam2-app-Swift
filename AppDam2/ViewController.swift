@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtNumero1: UITextField!
     @IBOutlet weak var txtNumero2: UITextField!
     @IBOutlet weak var lblResultado: UILabel!
-    
+    //variables globales
+    var n1 = 0, n2 = 0, resu: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func btnCalcular(_ sender: UIButton) {
-        //variables
-        var n1, n2, resu: Int
+        
         //var num:String?
         
         //entrada
@@ -45,6 +45,11 @@ class ViewController: UIViewController {
         // 2. Acceder al identificado "resumen" (pantalla2) y luego castearlo a tipo
         // DetalleViewController con el as!
         let pantalla2 = data.instantiateViewController(identifier: "resumen") as! DetalleViewController
+        
+        // 4. accediendo a los atributos
+        pantalla2.num1 = n1
+        pantalla2.num2 = n2
+        pantalla2.resul = resu
         
         // 3. Direccionar con present - animated es una animacion
         present(pantalla2, animated: true)
